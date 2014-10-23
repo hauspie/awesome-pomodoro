@@ -1,0 +1,28 @@
+#!/bin/bash
+
+DATA_DIR=$HOME/.pomodoro
+RING=$DATA_DIR/ring.mp3
+
+function notify()
+{
+	preset=$1
+	text=$2
+	cmd="naughty.notify({preset = naughty.config.presets.$preset, title='Pomodoro', text='$2'})"
+	echo $cmd | awesome-client
+}
+
+time=$1
+if [ -z "$time" ]
+then
+	time=25
+fi
+timeinc=`expr $time + 1`
+for i in `seq 1 $time`
+do
+	left=`expr $timeinc - $i`	
+	notify normal "$left mn left... keep going!"
+	sleep 60
+
+done
+notify critical "DING ! Take a break moron"
+test -f $RING && mplayer -really-quiet $RING >& /dev/null
