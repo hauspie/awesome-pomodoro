@@ -11,7 +11,7 @@ Used to work using Pomodoro time management technique [1]. I do not have a physi
 
 Usage
 =====
-$ pomodoro [time in minutes]
+	$ pomodoro [time in minutes]
 
 If time is not given, 25 minutes is used by default.
 
