@@ -12,10 +12,17 @@ function notify()
 }
 
 time=$1
+pausetime=$2
+
 if [ -z "$time" ]
 then
 	time=25
 fi
+if [ -z "$pausetime" ]
+then
+	pausetime=5
+fi
+
 timeinc=`expr $time + 1`
 for i in `seq 1 $time`
 do
@@ -25,4 +32,7 @@ do
 
 done
 notify critical "DING ! Take a break moron"
+test -f $RING && mplayer -really-quiet $RING >& /dev/null
+sleep `expr $pausetime \* 60`
+notify critical "Break finished... go back to work"
 test -f $RING && mplayer -really-quiet $RING >& /dev/null
