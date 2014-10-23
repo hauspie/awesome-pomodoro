@@ -17,9 +17,9 @@ If time is not given, 25 minutes is used by default.
 
 Gotcha
 ======
-This script is released under GPL license
-The script uses $HOME/.pomodoro/ring.mp3 for playing the sound at the end.
-The provided ring.mp3 is by Mike Koenig and under Creative Commons License Attribution 3.0
+* This script is released under GPL license
+* The script uses $HOME/.pomodoro/ring.mp3 for playing the sound at the end.
+* The provided ring.mp3 is by Mike Koenig and under Creative Commons License Attribution 3.0
 
 References
 ==========
