@@ -31,7 +31,7 @@ do
 	sleep 60
 
 done
-notify critical "DING ! Take a break moron"
+notify critical "DING ! Take a break !"
 test -f $RING && mplayer -really-quiet $RING >& /dev/null
 sleep `expr $pausetime \* 60`
 notify critical "Break finished... go back to work"
