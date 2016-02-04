@@ -2,6 +2,14 @@
 
 DATA_DIR=$HOME/.pomodoro
 RING=$DATA_DIR/ring.mp3
+trap exit_script TERM
+
+function exit_script()
+{
+	echo "Exiting"
+	notify-send "Exiting pomodor"
+	exit 0
+}
 
 function notify()
 {
@@ -27,7 +35,8 @@ for i in `seq 1 $time`
 do
 	left=`expr $timeinc - $i`	
 	notify normal "$left mn left... keep going!"
-	sleep 60
+	sleep 60 & # This trick is needed so that trap is immediatly executed when receiving SIGTERM
+	wait
 
 done
 notify critical "DING ! Take a break !"
