@@ -1,8 +1,8 @@
-Awesome Pomodoro timer
+Pomodoro timer
 =====================
 
-This script is a simple timer that works with the awesome window manager.
-Every minutes, it displays a notification using naughty notification library.
+This script is a simple timer that works notify-send command
+Every minutes, it displays a notification using notify-send
 
 At the end of the timer, it displays a critical notification and plays a sound using mplayer
 

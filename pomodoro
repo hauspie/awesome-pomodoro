@@ -5,10 +5,9 @@ RING=$DATA_DIR/ring.mp3
 
 function notify()
 {
-	preset=$1
+	urgency=$1
 	text=$2
-	cmd="naughty.notify({preset = naughty.config.presets.$preset, title='Pomodoro', text='$2'})"
-	echo $cmd | awesome-client
+	notify-send -u $urgency "$text"
 }
 
 time=$1
